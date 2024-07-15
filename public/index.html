@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slava Zakharuk's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+</head>
+<body class="bg-gradient-to-r from-blue-200 to-blue-800 text-gray-900">
+    <header class="bg-gradient-to-r from-blue-200 to-blue-800 shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-white">Slava Zakharuk's Portfolio</h1>
+        </div>
+        <nav class="bg-gray-800">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex space-x-4">
+                            <a href="#" onclick="loadContent('about.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="#" onclick="loadContent('projects.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                            <a href="#" onclick="loadContent('skills.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                            <a href="#" onclick="loadContent('experience.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                            <a href="#" onclick="loadContent('education.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Education</a>
+                            <a href="#" onclick="loadContent('contact.html')" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="content" class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 bg-white bg-opacity-75 rounded-lg shadow-lg">
+            <!-- Content will be loaded here -->
+        </div>
+    </main>
+    <script>
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => document.getElementById('content').innerHTML = data);
+        }
+        // Load the default content
+        loadContent('about.html');
+    </script>
+</body>
+</html>
